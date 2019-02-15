@@ -10,8 +10,12 @@ import Python
 PythonLibrary.useVersion(3, 6)      // Specify the version of Python.
                                     // On macOS, It is referred to `/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/`.
 let np = Python.import("numpy")
+let plt = Python.import("matplotlib.pyplot")
 var a = np.linspace(-5, 5)
-var b = np.arange(-5, 5)            // of couse, Swift 4 TF can import and use matplotlib.pyplot but on my Mac, couldn't use it on Python 3.6... 😞
+var b = np.arange(50)            // of couse, Swift 4 TF can import and use matplotlib.pyplot but on my Mac, couldn't use it on Python 3.6... 😞
+
+// plt.plot(a, b)
+// plt.show()
 
 print("variable a: \(a)")
 print("variable b: \(b)")
