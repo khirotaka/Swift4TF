@@ -53,7 +53,7 @@ func train() {
     var count: Int = 0
     
     for epoch in stride(from: 0, to: numEpochs, by: 1) {
-        for (x, y) in zip(trainImage.batched(batchSize), trainLabel.batched(batchSize)) {
+        for (x, y) in zip(trainImage.batched(batchSize), trainLabel.batched(batchSize)).shuffled() {
             let (loss, grad) = model.valueWithGradient { (model: Network) -> Tensor<Float> in
                 let logit = model.applied(to: x, in: trainContext)
                 return softmaxCrossEntropy(logits: logit, labels: y)
