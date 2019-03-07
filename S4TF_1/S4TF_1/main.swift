@@ -12,11 +12,12 @@ PythonLibrary.useVersion(3, 6)
 let np = Python.import("numpy")
 
 
-let (x_train, y_train) = readMNIST(imagesFile: "Resources/train-images.idx3-ubyte",
-                                    labelsFile: "Resources/train-labels.idx1-ubyte")
 
-let (x_test, y_test) = readMNIST(imagesFile: "Resources/t10k-images.idx3-ubyte",
-                                 labelsFile: "Resources/t10k-labels.idx1-ubyte")
+let (x_train, y_train) = readMNIST(imagesFile: "train-images.idx3-ubyte",
+                                    labelsFile: "train-labels.idx1-ubyte")
+
+let (x_test, y_test) = readMNIST(imagesFile: "t10k-images.idx3-ubyte",
+                                 labelsFile: "t10k-labels.idx1-ubyte")
 
 let trainImage = Dataset<Tensor<Float>>(elements: x_train)
 let trainLabel = Dataset<Tensor<Int32>>(elements: y_train)
