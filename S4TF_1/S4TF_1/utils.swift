@@ -2,8 +2,7 @@
 //  data.swift
 //  S4TF_1
 //
-//  Created by 川島 寛隆 on 2019/03/06.
-//  Copyright © 2019 川島 寛隆. All rights reserved.
+// Reference: https://github.com/tensorflow/swift-models/blob/stable/MNIST/MNIST.swift
 //
 
 import Python
